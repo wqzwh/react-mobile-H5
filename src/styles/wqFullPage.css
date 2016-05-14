@@ -1,0 +1,150 @@
+/*MusicTool*/
+.webapp-loading{
+	position: absolute;
+	right:0;
+	top:0;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+	background-color:#fff;
+	z-index: 100;
+    text-align: center;
+    // padding-top: 50%;
+    font-size: 1.875rem;
+    color: #fff;
+}
+.webapp-loading-body{
+	width:98px;
+	height:98px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-left: -49px;
+	margin-top: -49px;
+}
+.webapp-loading-dian{
+	position: absolute;
+	z-index: 6;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	border:2px solid #e3e3e3;
+	border-radius: 100%;
+	-webkit-animation: loading 1s linear infinite;
+    animation: loading 1s linear infinite;
+}
+.webapp-loading-pic{
+	width:100%;
+	height:100%;
+	transform:scale(0.85);
+	position: absolute;
+	z-index: 4;
+}
+.webapp-loading-pic img{
+	position: absolute;
+	left:3px;
+	top:3px;
+	width:100%;
+	height:100%;
+}
+.webapp-loading-dian:before{
+	content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #00c6ff;
+    border-radius: 10px;
+    margin: 8px;
+}
+.scene-audio{
+	width: 42px;
+    height: 34px;
+    position: absolute;
+    z-index: 100000;
+    overflow: hidden;
+    outline: 0;
+    cursor: pointer;
+}
+.scene-audio.rt{
+	right:0;
+	top:10px;
+}
+.scene-audio .scene-audio-pointer{
+	position: absolute;
+	z-index: 3;
+	width: 28.5px;
+    height: 20px;
+    background:url('../img/icon-audio-pointer.png') no-repeat;
+    background-size: 100% 100%;
+    transform-origin:0 0 0;
+
+}
+.scene-audio .scene-audio-disk{
+	position: absolute;
+    z-index: 2;
+    width: 31px;
+    height: 31px;
+    background: url('../img/icon-audio-disk.png') no-repeat;
+    background-size: 100%;
+}
+.scene-audio.rt .scene-audio-pointer, .scene-audio.rb .scene-audio-pointer{
+	right:-32px;
+	top:5.5px;
+	transform:translate(0px 0) rotate(-12deg) scale(-1,1);
+}
+.scene-audio.rt .scene-audio-disk, .scene-audio.bb .scene-audio-disk{
+	left: 0;
+}
+.loading-mask{
+	position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,.1);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+.scene-audio.rt.play .scene-audio-pointer, .scene-audio.rb.play .scene-audio-pointer{
+	transform: translate(0px,1px) rotate(0deg) scale(-1,1);
+}
+.scene-audio.play .scene-audio-pointer{
+	transform: translate(0px,1px) rotate(0deg);
+}
+.scene-audio.play .scene-audio-disk{
+	animation: loading 1s linear infinite;
+}
+.scene-audio audio{
+	position:absolute;
+	z-index: 9999;
+	opacity:0;
+}
+
+// 动画函数
+@-webkit-keyframes loading{
+	0%{
+		-webkit-transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(360deg);
+	}
+}
+@keyframes loading{
+	0%{
+		transform:rotate(0deg);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
+}
+
+
+/*FirstPage*/
+#sectionContent{
+	display: none;
+}
+.wqfirstpage{
+	background: url('../images/bg.jpg') no-repeat;
+	background-size: cover;
+}
