@@ -1,0 +1,11 @@
+.SecondPage{
+	/*background: url(../images/2.jpg) no-repeat;
+	background-size: cover;*/
+	background: #fff;
+}
+.ThirdPage{
+	background: #000;
+}
+.FourPage{
+	background: #ccc;
+}
