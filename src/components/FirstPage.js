@@ -13,5 +13,7 @@ class FirstPage extends React.Component {
 }
 
 FirstPage.defaultProps = {
+	
 };
+
 export default FirstPage;

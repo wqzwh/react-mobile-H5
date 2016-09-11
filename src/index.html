@@ -20,8 +20,15 @@
         autoScroll:0,              // 自动播放时间间隔，如果为 0 则不自动播放，单位 ms
         loopSection:true,          // Section循环滚动
         loopSlide:true,            // Slide循环滑动
-        afterLoad:null,            // 页面载入事件，具体查看下面的 afterLoad 函数
-        beforeLeave:null,           // 页面离开事件，具体查看下面的 beforeLeave 函数
+        afterLoad:function(){
+          console.log("afterLoad")
+          window._this.SecondPagEcharts();
+          window._ThirdPage.ThirdPageEcharts();
+          window._FourPageEcharts.FourPageEcharts();
+        },            // 页面载入事件，具体查看下面的 afterLoad 函数
+        beforeLeave:function(){
+          console.log("beforeLeave")
+        },           // 页面离开事件，具体查看下面的 beforeLeave 函数
         afterSlideLoad:null,       // slide 载入事件
         beforeSlideLeave:null      // slide 离开事件
     });

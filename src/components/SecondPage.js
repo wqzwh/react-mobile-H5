@@ -3,8 +3,25 @@ require('styles/SecondPage.css');
 import React from 'react';
 import Echarts from 'echarts';
 
-function SecondPagEcharts (data) {
-    
+class SecondPage extends React.Component {
+  // 定义内容组件自己的状态
+  constructor(props) {
+      super(props);
+      this.state = {
+        data:[]
+      };
+  }
+
+  // 在渲染dom之前调用，获取数据
+  componentWillMount(){
+    // 引入json数据
+    let Details=require('../data/SecondPage.json');
+    this.setState({
+      data:Details
+    });
+  }
+
+  SecondPagEcharts(){
     let myChart = Echarts.init(document.getElementById('SecondPage_charts'));
 
     var option = {
@@ -34,30 +51,12 @@ function SecondPagEcharts (data) {
         };
 
         myChart.setOption(option);
-}
 
-class SecondPage extends React.Component {
-  // 定义内容组件自己的状态
-  constructor(props) {
-      super(props);
-      this.state = {
-        data:[]
-      };
   }
 
-  // 在渲染dom之前调用，获取数据
-  componentWillMount(){
-    // 引入json数据
-    let Details=require('../data/SecondPage.json');
-    this.setState({
-      data:Details
-    });
-
-    
-  }
-  
   componentDidMount(){
-    SecondPagEcharts(this.state.data);
+    // this.SecondPagEcharts();
+    window._this=this;
   }
 
   render() {
@@ -75,5 +74,6 @@ class SecondPage extends React.Component {
 }
 
 SecondPage.defaultProps = {
+
 };
 export default SecondPage;
